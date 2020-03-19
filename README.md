@@ -1,68 +1,141 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React
 
-## Available Scripts
+## React 기능
 
-In the project directory, you can run:
+- Component
+- Context
+  - createContext
+- Hooks
+  - useState
+  - useRef : 일반 값을 기억
+  - useEffect : componentDidMount, componentDidUpdate, componentWillUnmount
+  - useLayoutEffect
+  - useMemo : 복잡한 함수 결과 값을 기억(함수의 리턴 값을 기억)
+  - useCallback : 함수 자체를 기억, 자식 컴포넌트에 함수를 전달 시 무조건 사용, 이벤트 함수에 거의 사용
+  - useReducer : reducer를 편리하게 사용하기 위해
+  - useMemo : 함수형 컴포넌트 내부에서 발생하는 연산을 최적화 할 수 있음.
+  - useContext : context 사용하기 위해
+- PureComponent : Class Component 일 때 사용
+- memo : Function 일 때 사용
+- React Router
 
-### `yarn start`
+## React 설치
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+npm i
+or
+yarn add
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+// Basic
+yarn add react react-dom
+yarn add prop-types
 
-### `yarn test`
+// React Router
+yarn add react-router
+yarn add react-router-dom
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+// Rest api
+yarn add axios
 
-### `yarn build`
+// Style
+yarn add styled-components
+yarn add styled-reset
+yarn add react-bootstrap bootstrap
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+// Compoentns
+yarn add react-textarea-autosize
+yarn add copy-to-clipboard
+yarn add react-helmet
+yarn add react-tabs
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## React Router
 
-### `yarn eject`
+- Link
+- Route
+  - render props : 자식에게 부모 props를 전달하고 싶을 경우
+  - exact : path와 정확하게 일치하는 경우
+- Browser
+  - BrowserRouter
+    - 새로고침을 했을 때 페이지가 안뜸
+    - 검색엔진에서 사용
+  - HashRouter
+    - Build, Delpoy시 편리함
+    - 새로고침을 했을 때 브라우저에 물어봄
+    - 관리자페이지에서 사용
+- withRouter
+- Switch
+  - 해당하는 첫 번째 페이지를 보여준다.
+  - 동시에 여러 개의 router가 보여지는 것을 막아준다.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## React Bootstrap
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```js
+// 추가해야 함.
+// Importing the Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## React helmet
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- 웹 사이트의 head를 쉽게 수정할 수 있다.
 
-## Learn More
+## Deploy
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 1) Deploying to Github Pages
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm i gh-pages
+or
+yarn add gh-pages
+```
 
-### Code Splitting
+1. package.json -> "homepage": "./" 추가
+2. npm run build 실행
+3. package.json -> "homepage": "https://hgko1207.github.io/{repository}/" 변경
+4. package.json -> "scripts" -> "deploy": "gh-pages -d build" 추가
+5. npm run deploy 실행
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### 2) Heroku 배포
 
-### Analyzing the Bundle Size
+- package.json 안에 아래 내용을 추가한다.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```json
+"heroku-postbuild": "npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+```
 
-### Making a Progressive Web App
+- [Heroku 사이트](https://dashboard.heroku.com/)를 접속하여 계정을 생성하고 로그인한다.
+- create a new app 한 후 Deploy 탭을 선택한다.
+- GitHub 계정을 연결 한 후 Manual deploy 한다.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## ES6 문법
 
-### Advanced Configuration
+- Class
+- import
+- map
+- filter
+- fill
+- reduce
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## 알아두면 좋은 것
 
-### Deployment
+- Node는 자바스크립트 실행기이다. (백엔드, 서버가 아님)
+- Node에서는 require 사용
+- Hooks는 함수 컴포넌트가 전체로 재실행되는 현상이 있다.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## 강의자료
 
-### `yarn build` fails to minify
+- [ZeroCho TV - React 기본 강좌 1-1. 리액트를 왜 쓰는가](https://www.youtube.com/watch?v=V3QsSrldHqI&list=PLcqDmjxt30RtqbStQqk-eYMK8N-1SYIFn)
+- [Nomad Coders Academy](https://academy.nomadcoders.co/courses/category/KR)
+- [Inflearn](https://www.inflearn.com/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## 공식문서
+
+- [React 시작하기](https://ko.reactjs.org/docs/getting-started.html)
+- [React Training / React Router](https://reacttraining.com/react-router/web/api/matchPath/returns)
+
+## 참고자료
+
+- [자그마한 리액트 팁 모음](https://react-etc.vlpt.us/)
+- [React 강좌) trendy React 0-0. 개요](https://velog.io/@public_danuel/trendy-react-0-0)
