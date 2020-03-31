@@ -22,9 +22,8 @@
 ## React 설치
 
 ```bash
-npm i
-or
-yarn add
+// Install
+npm i or yarn add
 
 // Basic
 yarn add react react-dom
@@ -40,7 +39,9 @@ yarn add axios
 // Style
 yarn add styled-components
 yarn add styled-reset
+yarn add styled-flex-component
 yarn add react-bootstrap bootstrap
+yarn add typography
 
 // Compoentns
 yarn add react-textarea-autosize
@@ -48,6 +49,8 @@ yarn add copy-to-clipboard
 yarn add react-helmet
 yarn add react-tabs
 
+// Icons
+yarn add react-fontawesome
 ```
 
 ## React Router
@@ -97,7 +100,9 @@ yarn add gh-pages
 4. package.json -> "scripts" -> "deploy": "gh-pages -d build" 추가
 5. npm run deploy 실행
 
-### 2) Heroku 배포
+### 2) Deploying to Heroku
+
+- Heroku는 간단하게 무료로 호스팅 할 수 있도록 해주는 서비스이다.
 
 - package.json 안에 아래 내용을 추가한다.
 
@@ -106,8 +111,18 @@ yarn add gh-pages
 ```
 
 - [Heroku 사이트](https://dashboard.heroku.com/)를 접속하여 계정을 생성하고 로그인한다.
-- create a new app 한 후 Deploy 탭을 선택한다.
+- **create a new app** 한 후 Deploy 탭을 선택한다.
 - GitHub 계정을 연결 한 후 Manual deploy 한다.
+
+### 3) Deploying to Netlify
+
+- [Netlify](https://www.netlify.com/)는 GitHub, GitLab 등과 계정 연동 및 쉬운 호스팅을 제공한다.
+
+#### GitHub 연동
+
+- 사이트를 접속하여 GitHub와 연결하여 Sign-up(회원가입)을 합니다.
+- 로그인 후 **New site from Git** 버튼을 클릭합니다.
+-
 
 ## ES6 문법
 
