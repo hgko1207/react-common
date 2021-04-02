@@ -3,21 +3,14 @@
 ## React 기능
 
 - Component
-- Context
-  - createContext
-- Hooks
-  - useState
-  - useRef : 일반 값을 기억
-  - useEffect : componentDidMount, componentDidUpdate, componentWillUnmount
-  - useLayoutEffect
-  - useMemo : 복잡한 함수 결과 값을 기억(함수의 리턴 값을 기억)
-  - useCallback : 함수 자체를 기억, 자식 컴포넌트에 함수를 전달 시 무조건 사용, 이벤트 함수에 거의 사용
-  - useReducer : reducer를 편리하게 사용하기 위해
-  - useMemo : 함수형 컴포넌트 내부에서 발생하는 연산을 최적화 할 수 있음.
-  - useContext : context 사용하기 위해
+- Context(createContext)
 - PureComponent : Class Component 일 때 사용
 - memo : Function 일 때 사용
+- React Hooks
 - React Router
+- Next
+- prop-types
+- eslint
 
 ## React 설치
 
@@ -40,13 +33,11 @@ yarn add axios
 yarn add styled-components
 yarn add styled-reset
 yarn add styled-flex-component
-yarn add react-bootstrap bootstrap
 yarn add typography
 
 // Compoentns
 yarn add react-textarea-autosize
 yarn add copy-to-clipboard
-yarn add react-helmet
 yarn add react-tabs
 
 // Icons
@@ -72,7 +63,65 @@ yarn add react-fontawesome
   - 해당하는 첫 번째 페이지를 보여준다.
   - 동시에 여러 개의 router가 보여지는 것을 막아준다.
 
-## React Bootstrap
+## React Hooks
+
+- useState : state 사용
+- useRef : 일반 값을 기억
+- useEffect : componentDidMount, componentDidUpdate, componentWillUnmount
+- useLayoutEffect
+- useMemo : 복잡한 함수 결과 값을 기억(함수의 리턴 값을 기억)
+- useCallback : 함수 자체를 기억, 자식 컴포넌트에 함수를 전달 시 무조건 사용, 이벤트 함수에 거의 사용
+- useReducer : reducer를 편리하게 사용하기 위해
+- useMemo : 함수형 컴포넌트 내부에서 발생하는 연산을 최적화 할 수 있음.
+- useContext : context 사용하기 위해
+- react-redux 7.1.0 부터 redux hook을 사용할 수 있음
+
+## React helmet
+
+- 웹 사이트의 head를 쉽게 수정할 수 있다.
+
+```bash
+yarn add react-helmet
+```
+
+## Redux
+
+- Redux (state) -> React의 state는 쓰지 않아도 된다.
+- 안정성, state 통제가 용이하기 때문에 사용
+- Action -> state를 바꾸는 행동 ex) 로그인 액션
+- Dispatch -> Action을 실행 ex) 로그인 액션 dispatch
+- Reducer -> Action의 결과로 state를 어떻게 바꿀지 정의
+- ex) 로그인 액션 dispatch 시 -> state 변경
+- Redux 설계 시 하나의 파일에 너무 많은 코드를 넣지 말고 분리하면 좋다.
+- 미들웨어는 액션과 스토어 사이에서 동작한다.
+
+```bash
+yarn add redux react-redux
+yarn add next-redux-wrapper
+yarn add react-redux@next
+```
+
+## Next
+
+- Link를 사용해 Router 기능을 대체한다.
+- 코드 스플리팅이 자동으로 된다.
+
+```bash
+yarn add next
+```
+
+## eslint
+
+- 코딩 규칙을 정할 수 있다.
+- 협업을 위해 사용한다.
+
+## Design
+
+### 1) React Bootstrap
+
+```bash
+yarn add react-bootstrap bootstrap
+```
 
 ```js
 // 추가해야 함.
@@ -80,9 +129,19 @@ yarn add react-fontawesome
 import "bootstrap/dist/css/bootstrap.min.css";
 ```
 
-## React helmet
+### 2) and design
 
-- 웹 사이트의 head를 쉽게 수정할 수 있다.
+```bash
+npm i antd
+npm i --save @ant-design/icons
+```
+
+- Icon
+
+  ```js
+  import { StarOutlined } from "@ant-design/icons";
+  <StarOutlined />;
+  ```
 
 ## Deploy
 
@@ -122,7 +181,6 @@ yarn add gh-pages
 
 - 사이트를 접속하여 GitHub와 연결하여 Sign-up(회원가입)을 합니다.
 - 로그인 후 **New site from Git** 버튼을 클릭합니다.
--
 
 ## ES6 문법
 
